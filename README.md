@@ -6,7 +6,7 @@ What do you do next? Just wait for your cab and nothing much, right? That’s wh
 
 The drivers on field are busy taking customers from one place to another. As the bookings come in they ride the cab without even thinking of optimisation. Let’s handle this in a better way now:
 
-Say, green marker  represents your home location in the map below. The markers stands for the each of their residents. The arrows represents directions of each one way path and time taken on that path. In each of the scenarios below, find out which path driver should take to drop your friends.
+Say, green marker  represents your home location in the map below. The red markers stands for the each of their residents. The arrows represents directions of each one way path and time taken on that path. In each of the scenarios below, find out which path driver should take to drop your friends.
 
 
 <img align = "center" src="https://github.com/raveerocks/article-writing/blob/master/map.jpg" width="800" height="500" />
