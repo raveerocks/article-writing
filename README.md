@@ -57,7 +57,53 @@ DIJKSTRA( Graph G, Weights w, Source s)
             
             5.3.1.1 v.d = u.d + w (u,v)
             5.3.1.2 v.path = u
-          
-  
 
 ```
+
+## Example
+
+<img align = "center" src="https://github.com/raveerocks/article-writing/blob/master/Untitled%20drawing.jpg" width="800" height="500" />
+
+<img align = "center" src="https://github.com/raveerocks/article-writing/blob/master/Untitled%20drawing%20(1).jpg" width="800" height="500" />
+
+
+
+## Complexity Analysis
+
+### Implementation 1 (Using array)
+
+|Line|Complexity|Comments|
+|----| ---------|--------|
+|1.1 | O(V)     ||
+|1.2 | O(V)     ||
+|2 | O(1)     ||
+|3 | O(V)     ||
+|4 | O(V)     |Creating an array takes O(V) complexity
+|5.1 | O(V<sup>2</sup>)     |Extracting min from min queue takes O(V) complexity and each vertex is extracted once|
+|5.2 | O(V)| Amortised cost of insertion into a unordered set takes O(1) complexity 
+|5.3.1.1 | O(E)|At most each edge is traversed once
+|5.3.1.2 | O(E)|At most each edge is traversed once
+
+Complexity using min priority queue = `O(V^2 + E)` = `O(V^2)
+
+
+### Implementation 2 (Using min-priority queue Q)
+
+|Line|Complexity|Comments|
+|----| ---------|--------|
+|1.1 | O(V)     ||
+|1.2 | O(V)     ||
+|2 | O(1)     ||
+|3 | O(V)     ||
+|4 | O(V)     |Buidling a min-priority queue takes O(V) complexity
+|5.1 | O(V logV)     |Extracting min from min queue takes O(V) complexity and each vertex is extracted once|
+|5.2 | O(V)| Amortised cost of insertion into a unordered set takes O(1) complexity 
+|5.3.1.1 | O(E)|At most each edge is traversed once
+|5.3.1.2 | O(E)|At most each edge is traversed once
+
+Complexity using min priority queue = `O(V logV + E)`
+
+
+## Notes
+
+In a graph with negative edge weights, Dijkstra's algorithm might produce incorrect results. Once a vertex is included into the final set we are considering alternatives paths to that vertex. With negative edge weights it is possible to have minimal cost paths with even more edges included.
